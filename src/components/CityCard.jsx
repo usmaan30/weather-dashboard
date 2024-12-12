@@ -1,28 +1,31 @@
 import weatherImg from './../assets/weather_img.jpg';
 
-function CityCard() {
+function CityCard({ cities, removeCity }) {
   return (
-    <div className="grid grid-cols-3 gap-6 bg-gray-200 px-6">
-      <div className="bg-blue-300 border-black border-2 rounded-md">
-        <img src={weatherImg} alt="" className="w-full h-[30%]" />
-        <h2>City name</h2>
-        <h3>Current temperature</h3>
-        <h3>Weather condition (e.g., sunny, rainy)</h3>
-        <button className="bg-slate-600">Remove the city</button>
-      </div>
-      <div className="bg-blue-300 border-black border-2 rounded-md">
-        <img src={weatherImg} alt="" className="w-full h-[30%]" />
-        <h2>City name</h2>
-        <h3>Current temperature</h3>
-        <h3>Weather condition (e.g., sunny, rainy)</h3>
-        <button className="bg-slate-600">Remove the city</button>
-      </div>
-      <div className="bg-blue-300 border-black border-2 rounded-md">
-        <img src={weatherImg} alt="" className="w-full h-[30%]" />
-        <h2>City name</h2>
-        <h3>Current temperature</h3>
-        <h3>Weather condition (e.g., sunny, rainy)</h3>
-        <button className="bg-slate-600">Remove the city</button>
+    <div className="bg-blue-300 min-h-screen pb-2">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 bg-blue-300 px-6 pb-2 h-full">
+        {cities.map((city, index) => (
+          <div
+            key={index}
+            className="bg-gray-100 border-black border-2 rounded-md p-4 h-fit"
+          >
+            <img src={weatherImg} alt="" className="w-full h-28" />
+            <h2 className="text-lg font-bold">{city.name}</h2>
+            <h3>
+              <span className="font-bold">Temperature:</span> {city.temperature}
+              °C
+            </h3>
+            <h3>
+              <span className="font-bold">Condition:</span> {city.condition}
+            </h3>
+            <button
+              onClick={() => removeCity(city.name)}
+              className="bg-slate-600 text-white p-2 rounded mt-2"
+            >
+              Remove City
+            </button>
+          </div>
+        ))}
       </div>
     </div>
   );
