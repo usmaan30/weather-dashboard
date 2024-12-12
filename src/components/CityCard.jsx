@@ -10,13 +10,15 @@ function CityCard({ cities, removeCity }) {
             className="bg-gray-100 border-black border-2 rounded-md p-4 h-fit"
           >
             <img src={weatherImg} alt="" className="w-full h-28" />
-            <h2 className="text-lg font-bold">{city.name}</h2>
+            <h2 className="text-xl font-bold">{city.name}</h2>
             <h3>
-              <span className="font-bold">Temperature:</span> {city.temperature}
+              <span className="text-lg font-bold">Temperature:</span>{' '}
+              {city.temperature}
               °C
             </h3>
             <h3>
-              <span className="font-bold">Condition:</span> {city.condition}
+              <span className="text-lg font-bold">Condition:</span>{' '}
+              {city.condition}
             </h3>
             <button
               onClick={() => removeCity(city.name)}
