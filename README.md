@@ -17,7 +17,7 @@ React, Vite, Tailwind, prettier, OpenweatherAPI
 
 1. Clone the repository:
 
-   git clone https://github.com/your-username/weather-dashboard.git
+   git clone https://github.com/usmaan30/weather-dashboard.git
 
    cd weather-dashboard
 
