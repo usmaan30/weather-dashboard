@@ -27,7 +27,7 @@ Note: Make sure to create your own API key from OpenWeather and put it in the .e
 
 2. Create a .env file in the root directory and add your API key like this:
 
-   REACT_APP_API_KEY=your_api_key_here
+   VITE_API_KEY=your_api_key_here
 
 3. To start the development server:
 

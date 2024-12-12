@@ -2,7 +2,7 @@ import Input from './components/Input';
 import CityCard from './components/CityCard';
 import { useState } from 'react';
 
-const API_KEY = process.env.REACT_APP_API_KEY; // Replace with your OpenWeather API key
+const API_KEY = import.meta.env.VITE_API_KEY; // Replace with your OpenWeatherMap API key
 
 function App() {
   const [cities, setCities] = useState([]);
@@ -40,7 +40,7 @@ function App() {
       // Add city data to the cities array
       setCities([...cities, cityData]);
     } catch (error) {
-      alert(error.message);
+      alert(error.message); // Display appropriate error message
     }
   };
 
